@@ -6,13 +6,15 @@ dictEvent = (EventInterface(),EventInterface(),EventInterface(),EventInterface()
 
 def execute(knight,events):
     index = 1
+    print(events)
     for event in events:
         if event == 8:
             eventIn = Event8X()
             knight.encounterK(eventIn,index,event)
             index+=1
+        elif event == 0:
+            break
         else:
-            print(event)
             knight.encounterK(dictEvent[event//10], index, event, dictCharacter[event//10])
             index+=1
             
@@ -20,7 +22,7 @@ def execute(knight,events):
             knight.ringsign = ''
             break
         
-        if event//10 == 0:
+        if knight.ringsign == '':
             break
 
     return knight.ringsign

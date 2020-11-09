@@ -26,5 +26,3 @@ def knight_journey(fileName):
         return execute(knight,events)
     except:
         return ''
-
-print(knight_journey('input.txt'))
