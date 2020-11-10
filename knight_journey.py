@@ -18,7 +18,7 @@ def knight_journey(fileName):
                 event = int(event)
                 if event == 0 or event == 8:
                     events.append(event)
-                elif event//10 > 0 and event//10 < 10:
+                elif event//10 > 0 and event//10 < 8 or event//10 == 9:
                     events.append(event)
             except:
                 pass

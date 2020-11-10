@@ -61,7 +61,12 @@ class Event5X(EventInterface):
 
 class Event7X(EventInterface):
     def encounter(self, knight, index, idEvent, baseDamage):
-        knight.ringsign = '0123456791'
+        if knight.ringsign[0] == '0':
+            res = int(knight.ringsign) + idEvent%10
+            knight.ringsign = '0' + str(res)
+        else:
+            res = int(knight.ringsign) + idEvent%10
+            knight.ringsign = str(res)
 
 class Event8X(EventInterface):
     def encounter(self, knight, index, idEvent,baseDamage):
